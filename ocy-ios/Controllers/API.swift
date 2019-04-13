@@ -9,7 +9,7 @@
 import Indigear
 import SwiftyJSON
 
-typealias callback = (_ result : JSON, _ err : String?) -> Void
+typealias callback = (_ result : Any, _ err : String?) -> Void
 
 
 protocol APIDelegate : class {
@@ -88,6 +88,14 @@ class API {
         })
     }
     
+    func isAuth(_ c : @escaping callback){
+        Indigear.run(Constants.serverAddress, { result in
+            let content = String(data: result.result ?? Data(), encoding : .utf8)
+            
+            c(content?.contains("Выйти") ?? false, nil)
+        })
+    }
+    
     func register(_ email : String, password : String, username : String, _ c : @escaping callback){
         let params = ["_csrf-frontend" : csrfToken,
                        "register-form[email]" : email,
@@ -122,6 +130,12 @@ class API {
             
             if let err = result.error {
                 c(JSON(), err.localizedDescription)
+                return
+            }
+            
+            // Успешная авторизация 🤦🏻‍♂️
+            if result.statusCode == 400 {
+                c(JSON(), nil)
                 return
             }
             
