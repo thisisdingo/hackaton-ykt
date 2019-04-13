@@ -1,5 +1,5 @@
 //
-//  RegisterInteractor.swift
+//  AuthInteractor.swift
 //  ocy-ios
 //
 //  Created by Mister Gamburger on 13/04/2019.
@@ -8,20 +8,23 @@
 
 import Foundation
 
-class RegisterInteractor : BaseInteractor {
+class AuthInteractor : BaseInteractor {
+    
     
     init() {
-        super.init(.register)
+        super.init(.auth)
     }
     
-    func register(_ email : String, password : String, username : String){
-        api.register(email, password: password, username: username, { json, err in
+    func auth(_ login : String, _ password : String){
+        
+        api.auth(login, password, { res, err in
             if let err = err {
                 self.delegate?.showError?(err)
             }else{
                 self.delegate?.success?()
             }
         })
+        
     }
     
 }

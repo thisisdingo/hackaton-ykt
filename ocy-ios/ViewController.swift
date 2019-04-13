@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        present(RegisterViewController.getVC(), animated: true, completion: nil)
+        present(AuthViewController.getVC(), animated: true, completion: nil)
     }
 }
 

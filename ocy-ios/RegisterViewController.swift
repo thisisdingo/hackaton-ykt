@@ -31,6 +31,12 @@ class RegisterViewController : UIViewController {
 
 extension RegisterViewController : BaseInteractorDelegate {
     
+    func success() {
+        
+    }
     
+    func showError(_ message: String) {
+        self.alert(message)
+    }
     
 }

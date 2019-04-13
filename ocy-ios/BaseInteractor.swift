@@ -11,16 +11,30 @@ import Foundation
 @objc protocol BaseInteractorDelegate : class {
     @objc optional func showLoading()
     @objc optional func hideLoading()
+    @objc optional func showError(_ message : String)
+    @objc optional func success()
 }
 
 class BaseInteractor {
     
-    let api = API.init()
+    let api : API!
     
     weak var delegate : BaseInteractorDelegate?
     
-    init() {
+    init(_ route : APIRoute) {
+        api = API.init(route)
+        api.delegate = self
         
+        delegate?.showLoading?()
+    }
+}
+extension BaseInteractor : APIDelegate {
+    func showError(_ message: String) {
+        delegate?.showError?(message)
+    }
+
+    func isReady() {
+        delegate?.hideLoading?()
     }
     
 }
