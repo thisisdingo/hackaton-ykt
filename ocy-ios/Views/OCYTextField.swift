@@ -13,12 +13,20 @@ import SkeletonView
     
     func setupView() {
         self.isSkeletonable = true
-        borderStyle = .none
+        borderStyle = .roundedRect
         
-        var newFrame = frame
-        newFrame.size.height = 44.0
-        self.frame = newFrame
-        layoutSubviews()
+        let toolbar = UIToolbar()
+        let space = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
+        let doneBtn = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(onToolBarDone))
+        
+        toolbar.items = [space, doneBtn]
+        toolbar.sizeToFit()
+        
+        self.inputAccessoryView = toolbar
+    }
+    
+    @objc func onToolBarDone() {
+        self.endEditing(true)
     }
     
     override func didMoveToWindow() {

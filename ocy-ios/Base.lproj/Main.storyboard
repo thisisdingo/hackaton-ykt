@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Item 2-->
+        <!--Аккаунт-->
         <scene sceneID="ERH-HI-0Zx">
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="jMJ-IY-2Ko" customClass="ProfileViewController" customModule="ocy_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="20" width="375" height="598"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bb5-Mn-GaB">
-                                        <rect key="frame" x="8" y="8" width="359" height="306"/>
+                                        <rect key="frame" x="8" y="8" width="359" height="352"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RIY-a5-FvH" customClass="OCYTextField" customModule="ocy_ios" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="359" height="30"/>
@@ -67,6 +67,13 @@
                                                     <action selector="didSaveButtonTapped:" destination="jMJ-IY-2Ko" eventType="touchUpInside" id="qt7-kj-kLx"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nu-N5-52x">
+                                                <rect key="frame" x="0.0" y="322" width="359" height="30"/>
+                                                <state key="normal" title="Выйти с аккаунта"/>
+                                                <connections>
+                                                    <action selector="didLogoutBtnTapped:" destination="jMJ-IY-2Ko" eventType="touchUpInside" id="WC8-ch-Npd"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
@@ -88,7 +95,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NYG-zn-Btc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="H5s-Uy-7KC"/>
+                    <tabBarItem key="tabBarItem" title="Аккаунт" id="H5s-Uy-7KC"/>
                     <connections>
                         <outlet property="emailTextField" destination="WwU-bm-m2O" id="Yxo-1a-PtF"/>
                         <outlet property="houseTextField" destination="yH7-YI-5Rz" id="aFZ-an-pZh"/>
@@ -103,7 +110,7 @@
             </objects>
             <point key="canvasLocation" x="-511.19999999999999" y="516.79160419790105"/>
         </scene>
-        <!--Item 1-->
+        <!--View Controller-->
         <scene sceneID="WeM-HZ-ASf">
             <objects>
                 <viewController id="FWa-Vt-xtk" sceneMemberID="viewController">
@@ -113,11 +120,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="5zI-8e-sMD"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 1" id="Txc-Uu-scv"/>
+                    <navigationItem key="navigationItem" id="zm9-AO-7jg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ua4-gR-KqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-510" y="-301"/>
+            <point key="canvasLocation" x="428" y="-301.79910044977515"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="6F7-A8-CpG">
@@ -144,13 +151,32 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="FWa-Vt-xtk" kind="relationship" relationship="viewControllers" id="YHR-oT-vtw"/>
+                        <segue destination="LEg-sY-1AX" kind="relationship" relationship="viewControllers" id="YHR-oT-vtw"/>
                         <segue destination="jMJ-IY-2Ko" kind="relationship" relationship="viewControllers" id="vYW-zY-GwY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WxA-GO-pOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1461" y="29"/>
+        </scene>
+        <!--Создать проблему-->
+        <scene sceneID="Ng5-Lk-WQo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LEg-sY-1AX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Создать проблему" id="Txc-Uu-scv"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yYy-Ob-8xd">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FWa-Vt-xtk" kind="relationship" relationship="rootViewController" id="KBQ-15-ETl"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="afz-lv-uJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-511.19999999999999" y="-301.79910044977515"/>
         </scene>
     </scenes>
 </document>

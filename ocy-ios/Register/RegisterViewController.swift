@@ -14,27 +14,51 @@ class RegisterViewController : UIViewController {
         return RegisterViewController(nibName: "RegisterViewController", bundle: nil)
     }
     
-    let interactor = RegisterInteractor()
+    var interactor : RegisterInteractor!
+    
+    @IBOutlet weak var emailTextField : UITextField!
+    @IBOutlet weak var loginTextField : UITextField!
+    @IBOutlet weak var passwordTextField : UITextField!
+    @IBOutlet weak var registerButton : OCYButton!
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        interactor = RegisterInteractor()
         interactor.delegate = self
         
         title = "Регистрация"
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        registerAutoKeyboard()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unRegisterAutoKeyboard()
+    }
+    
     @IBAction func didRegisterTapped(_ sender : OCYButton){
-        interactor.register("asdasdads@gmail.com", password: "alksasdajd", username: "aksjdaskl")
+        interactor.register(emailTextField.text!, password: passwordTextField.text!, username: loginTextField.text!)
     }
     
 }
 
 extension RegisterViewController : BaseInteractorDelegate {
     
+    func showLoading() {
+        registerButton.showAnimatedGradientSkeleton()
+    }
+    
+    func hideLoading() {
+        registerButton.hideSkeleton()
+    }
+    
+    
     func success() {
-        
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func showError(_ message: String) {

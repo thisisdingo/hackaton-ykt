@@ -91,9 +91,16 @@ class API {
     
     func isAuth(_ c : @escaping callback){
         Indigear.run(Constants.serverAddress + "user/settings/profile", { result in
-            let isNotAuth = (result.statusCode == 400)
+            
+            guard result.result != nil else{
+                c(false, nil)
+                return
+            }
+            
+            let content = String(data: result.result ?? Data(), encoding: .utf8)
+            
 
-            c(!isNotAuth, nil)
+            c(content?.contains("Выйти") ?? false, nil)
         })
     }
     
@@ -172,6 +179,14 @@ class API {
             }
             
             c(result.result ?? Data(), nil)
+        })
+    }
+    
+    
+    func fetchCategories(){
+        Indigear.run(Constants.serverAddress + "trouble/create", { result in
+            let content = String(data: result.result ?? Data(), encoding: .utf8) ?? ""
+            c(content, nil)
         })
     }
     

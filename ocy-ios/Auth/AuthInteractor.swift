@@ -17,12 +17,16 @@ class AuthInteractor : BaseInteractor {
     
     func auth(_ login : String, _ password : String){
         
+        delegate?.showLoading?()
+        
         api.auth(login, password, { res, err in
             if let err = err {
                 self.delegate?.showError?(err)
             }else{
                 self.delegate?.success?()
             }
+            
+            self.delegate?.hideLoading?()
         })
         
     }

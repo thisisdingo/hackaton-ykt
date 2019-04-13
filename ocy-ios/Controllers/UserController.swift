@@ -54,14 +54,7 @@ class UserController {
     
     
     func dropAccessToken(){
-        guard let cookies = HTTPCookieStorage.shared.cookies else {
-            print("Cookie list is empty")
-            return
-        }
-        
-        for cookie in cookies {
-            HTTPCookieStorage.shared.deleteCookie(cookie)
-        }
+        HTTPCookieStorage.shared.cookies?.forEach(HTTPCookieStorage.shared.deleteCookie)
     }
     
 }

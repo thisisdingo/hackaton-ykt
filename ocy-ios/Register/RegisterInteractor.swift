@@ -15,12 +15,14 @@ class RegisterInteractor : BaseInteractor {
     }
     
     func register(_ email : String, password : String, username : String){
+        delegate?.showLoading?()
         api.register(email, password: password, username: username, { json, err in
             if let err = err {
                 self.delegate?.showError?(err)
             }else{
                 self.delegate?.success?()
             }
+            self.delegate?.hideLoading?()
         })
     }
     

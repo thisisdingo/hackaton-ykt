@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import AutoKeyboard
 
 class AuthViewController : UIViewController {
 
     @IBOutlet weak var loginTextField : UITextField!
     @IBOutlet weak var passwordTextField : UITextField!
-    
-    let interactor : AuthInteractor = AuthInteractor.init()
+    @IBOutlet weak var loginButton : OCYButton!
+
+    var interactor : AuthInteractor!
     
     static func getVC() -> AuthViewController {
         return AuthViewController(nibName: "AuthViewController", bundle: nil)
@@ -24,9 +26,17 @@ class AuthViewController : UIViewController {
         
         title = "Авторизация"
         
+        interactor = AuthInteractor.init()
         interactor.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        registerAutoKeyboard()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        unRegisterAutoKeyboard()
+    }
     
     @IBAction func didAuthButtonTapped(_ sender : OCYButton){
         interactor.auth(loginTextField.text!, passwordTextField.text!)
@@ -39,6 +49,16 @@ class AuthViewController : UIViewController {
     
 }
 extension AuthViewController : BaseInteractorDelegate {
+    
+    func showLoading() {
+        loginButton.showAnimatedGradientSkeleton()
+    }
+    
+    
+    func hideLoading() {
+        loginButton.hideSkeleton()
+
+    }
     
     func success() {
         dismiss(animated: true, completion: nil)

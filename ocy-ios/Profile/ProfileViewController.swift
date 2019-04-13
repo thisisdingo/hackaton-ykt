@@ -46,6 +46,17 @@ class ProfileViewController : UIViewController {
         interactor.updateUserProfile(user)
     }
     
+    @IBAction func didLogoutBtnTapped(_ sender : UIButton) {
+        let alert = UIAlertController(title: "Внимание", message: "Вы действительно хотите выйти с аккаунта?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Выйти", style: .destructive, handler: { _ in
+            UserController.shared.dropAccessToken()
+            self.tabBarController?.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)        
+        
+    }
+    
     
 }
 extension ProfileViewController : BaseInteractorDelegate {
