@@ -21,6 +21,7 @@ enum APIRoute : String {
     case none = ""
     case register = "user/register"
     case auth = "user/login"
+    case profile = "user/settings/profile"
 }
 
 class API {
@@ -157,7 +158,21 @@ class API {
             }
             c(JSON(), error)
         })
+    }
+    
+    func updateProfile(_ profile : User, _ c : @escaping callback) {
+        var params = profile.dictionary
+        params["_csrf-frontend"] = csrfToken
         
+        Indigear.post(Constants.serverAddress + "user/settings/profile", headers, params, { result in
+            
+            if let err = result.error {
+                c(JSON(), err.localizedDescription)
+                return
+            }
+            
+            c(result.result ?? Data(), nil)
+        })
     }
     
 }

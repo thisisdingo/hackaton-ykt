@@ -27,6 +27,9 @@ class BaseInteractor {
         
         delegate?.showLoading?()
     }
+    
+    func fetch(){}
+    
 }
 extension BaseInteractor : APIDelegate {
     func showError(_ message: String) {
