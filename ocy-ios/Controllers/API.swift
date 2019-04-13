@@ -197,4 +197,26 @@ class API {
         })
     }
     
+    
+    func createTrouble(_ trouble : Trouble){
+        func updateProfile(_ profile : Profile, _ avatar : UIImage?, _ c : @escaping callback){
+            
+            let parameters = profile.dictionary
+            
+            let timestampUnix = Date().timeIntervalSince1970.description
+            
+            Alamofire.upload( multipartFormData: { MultipartFormData in
+                for (key, value) in parameters {
+                    MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
+                }
+                if let avatar = avatar {
+                    MultipartFormData.append(Helpers.compressImage(avatar.normalize()) ?? Data(), withName: "user_image", fileName: "avatar-\(timestampUnix).jpg", mimeType: "image/jpeg")
+                }
+            }, to: Constants.serverAddress + "user_profile_update_api.php") { (result) in
+                c(JSON(), nil)
+            }
+            
+        }
+    }
+    
 }
