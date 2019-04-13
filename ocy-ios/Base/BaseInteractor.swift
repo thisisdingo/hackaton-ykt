@@ -30,6 +30,10 @@ class BaseInteractor {
     
     func fetch(){}
     
+    func apiInitialized(){
+        
+    }
+    
 }
 extension BaseInteractor : APIDelegate {
     func showError(_ message: String) {
@@ -38,6 +42,7 @@ extension BaseInteractor : APIDelegate {
 
     func isReady() {
         delegate?.hideLoading?()
+        apiInitialized()
     }
     
 }

@@ -33,6 +33,9 @@
 		65D8F9CF226237590021BCF9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9CE226237590021BCF9 /* ProfileViewController.swift */; };
 		65D8F9D2226237B50021BCF9 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9D1226237B50021BCF9 /* ProfileInteractor.swift */; };
 		65D8F9D422623AA10021BCF9 /* OCYTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9D322623AA10021BCF9 /* OCYTextField.swift */; };
+		65D8F9D622625D350021BCF9 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9D522625D340021BCF9 /* Category.swift */; };
+		65D8F9D822625DE70021BCF9 /* CreateTroubleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9D722625DE70021BCF9 /* CreateTroubleViewController.swift */; };
+		65D8F9DA22625DF60021BCF9 /* CreateTroubleInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9D922625DF60021BCF9 /* CreateTroubleInteractor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +69,9 @@
 		65D8F9CE226237590021BCF9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		65D8F9D1226237B50021BCF9 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		65D8F9D322623AA10021BCF9 /* OCYTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OCYTextField.swift; sourceTree = "<group>"; };
+		65D8F9D522625D340021BCF9 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		65D8F9D722625DE70021BCF9 /* CreateTroubleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTroubleViewController.swift; sourceTree = "<group>"; };
+		65D8F9D922625DF60021BCF9 /* CreateTroubleInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTroubleInteractor.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +107,7 @@
 		6507DCC42261DEA0007B46A4 /* ocy-ios */ = {
 			isa = PBXGroup;
 			children = (
+				65D8F9DB22625DFD0021BCF9 /* Create trouble */,
 				65D8F9D0226237700021BCF9 /* Profile */,
 				65D8F9C5226228AE0021BCF9 /* Intro */,
 				65D8F9C2226226B10021BCF9 /* Helpers */,
@@ -117,6 +124,7 @@
 				6507DCCC2261DEA0007B46A4 /* ocy_ios.xcdatamodeld */,
 				65D8F9C8226229330021BCF9 /* MainTabBar.swift */,
 				65D8F9CA22622AC00021BCF9 /* User.swift */,
+				65D8F9D522625D340021BCF9 /* Category.swift */,
 			);
 			path = "ocy-ios";
 			sourceTree = "<group>";
@@ -193,6 +201,15 @@
 				65D8F9D1226237B50021BCF9 /* ProfileInteractor.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		65D8F9DB22625DFD0021BCF9 /* Create trouble */ = {
+			isa = PBXGroup;
+			children = (
+				65D8F9D722625DE70021BCF9 /* CreateTroubleViewController.swift */,
+				65D8F9D922625DF60021BCF9 /* CreateTroubleInteractor.swift */,
+			);
+			path = "Create trouble";
 			sourceTree = "<group>";
 		};
 		E0A7431D31B53983D6EED426 /* Frameworks */ = {
@@ -342,9 +359,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65D8F9D822625DE70021BCF9 /* CreateTroubleViewController.swift in Sources */,
 				65D8F9C7226228BB0021BCF9 /* IntroViewController.swift in Sources */,
 				65D8F9D422623AA10021BCF9 /* OCYTextField.swift in Sources */,
 				6507DCCE2261DEA0007B46A4 /* ocy_ios.xcdatamodeld in Sources */,
+				65D8F9DA22625DF60021BCF9 /* CreateTroubleInteractor.swift in Sources */,
 				6507DCDD2261E13D007B46A4 /* RegisterInteractor.swift in Sources */,
 				6507DCC62261DEA0007B46A4 /* AppDelegate.swift in Sources */,
 				65D8F9CB22622AC00021BCF9 /* User.swift in Sources */,
@@ -362,6 +381,7 @@
 				65D8F9B22261F5F60021BCF9 /* Extension+UIViewController.swift in Sources */,
 				65D8F9AA2261E6A00021BCF9 /* Constants.swift in Sources */,
 				65D8F9BA226217BA0021BCF9 /* DOMParser.swift in Sources */,
+				65D8F9D622625D350021BCF9 /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

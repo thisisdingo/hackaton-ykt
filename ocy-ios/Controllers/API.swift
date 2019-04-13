@@ -22,6 +22,7 @@ enum APIRoute : String {
     case register = "user/register"
     case auth = "user/login"
     case profile = "user/settings/profile"
+    case createTrouble = "trouble/create"
 }
 
 class API {
@@ -49,11 +50,17 @@ class API {
         return content
     }
     
-    var csrfToken : String = "" {
-        didSet (value) {
-            if !value.isEmpty {
+    private var csrfTokenStore = ""
+    var csrfToken : String {
+        set {
+            csrfTokenStore = newValue
+            
+            if !newValue.isEmpty {
                 delegate?.isReady()
             }
+        }
+        get {
+            return csrfTokenStore
         }
     }
     
@@ -183,7 +190,7 @@ class API {
     }
     
     
-    func fetchCategories(){
+    func fetchCategories(_ c : @escaping callback){
         Indigear.run(Constants.serverAddress + "trouble/create", { result in
             let content = String(data: result.result ?? Data(), encoding: .utf8) ?? ""
             c(content, nil)
