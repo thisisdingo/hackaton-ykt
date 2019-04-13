@@ -22,6 +22,8 @@ class AuthViewController : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Авторизация"
+        
         interactor.delegate = self
     }
     
@@ -31,11 +33,15 @@ class AuthViewController : UIViewController {
         
     }
     
+    @IBAction func didRegisterTapped(_ sender : OCYButton){
+        navigationController?.pushViewController(RegisterViewController.getVC(), animated: true)
+    }
+    
 }
 extension AuthViewController : BaseInteractorDelegate {
     
     func success() {
-        
+        dismiss(animated: true, completion: nil)
     }
     
     func showError(_ message: String) {

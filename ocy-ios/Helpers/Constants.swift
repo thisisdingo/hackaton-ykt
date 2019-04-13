@@ -12,5 +12,6 @@ struct Constants {
     static let serverAddress = "https://www.oneclickyakutsk.ru/"
     
     static let userConfigLoadedNotification = Notification.Name("userConfigLoadedNotification")
+    static let userProfileUpdated = Notification.Name("userProfileUpdated")
     
 }

@@ -16,6 +16,13 @@ class MainTabBar : UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUserData()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setUserData), name: Constants.userProfileUpdated, object: nil)
+    }
+    
+    @objc func setUserData(){
+        tabBar.items?.last?.title = UserController.shared.currentUser.name
     }
     
 }

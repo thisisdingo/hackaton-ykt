@@ -14,19 +14,41 @@ class UserController {
     
     var api = API(.none)
     
-    var isAuth : Bool = false
+    private var isAuthStorage : Bool = false
+    var isAuth : Bool {
+        set (value) {
+            isAuthStorage = value
+            
+            if value {
+                fetchUser()
+            }
+        }
+        get {
+            return isAuthStorage
+        }
+    }
     var configLoaded : Bool = false
+    
+    var currentUser = User()
     
     func checkUser(){
         api.isAuth({ [weak self] result, err in
-            guard result as! Bool else {
-                return
-            }
-            
-            self?.isAuth = result as! Bool
+            self?.isAuth = (result as? Bool) ?? false
             self?.configLoaded = true
 
             NotificationCenter.default.post(name: Constants.userConfigLoadedNotification, object: nil)
+        })
+    }
+    
+    func fetchUser(){
+        api.fetchUser({ html, error in
+            if let err = error {
+                print(err)
+                return
+            }
+            
+            self.currentUser = User((html as? String) ?? "")
+            NotificationCenter.default.post(name: Constants.userProfileUpdated, object: nil)
         })
     }
     

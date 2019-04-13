@@ -89,10 +89,17 @@ class API {
     }
     
     func isAuth(_ c : @escaping callback){
-        Indigear.run(Constants.serverAddress, { result in
-            let content = String(data: result.result ?? Data(), encoding : .utf8)
-            
-            c(content?.contains("Выйти") ?? false, nil)
+        Indigear.run(Constants.serverAddress + "user/settings/profile", { result in
+            let isNotAuth = (result.statusCode == 400)
+
+            c(!isNotAuth, nil)
+        })
+    }
+    
+    func fetchUser(_ c : @escaping callback){
+        Indigear.run(Constants.serverAddress + "user/settings/profile", { result in
+            let content = String(data: result.result ?? Data(), encoding: .utf8) ?? ""
+            c(content, nil)
         })
     }
     

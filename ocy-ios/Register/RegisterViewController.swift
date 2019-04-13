@@ -21,6 +21,8 @@ class RegisterViewController : UIViewController {
         
         interactor.delegate = self
         
+        title = "Регистрация"
+        
     }
     
     @IBAction func didRegisterTapped(_ sender : OCYButton){

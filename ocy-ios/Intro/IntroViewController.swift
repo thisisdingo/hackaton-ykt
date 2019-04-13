@@ -16,8 +16,8 @@ class IntroViewController : UIViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.configLoaded), name: Constants.userConfigLoadedNotification, object: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         UserController.shared.checkUser()
     }
     
@@ -25,7 +25,7 @@ class IntroViewController : UIViewController {
         if UserController.shared.isAuth {
             present(MainTabBar.getVC(), animated: true, completion: nil)
         }else{
-            present(AuthViewController.getVC(), animated: true, completion: nil)
+            present(Helpers.getNavigationController(AuthViewController.getVC()), animated: true, completion: nil)
         }
     }
     

@@ -28,6 +28,9 @@
 		65D8F9C4226226CF0021BCF9 /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9C3226226CF0021BCF9 /* UserController.swift */; };
 		65D8F9C7226228BB0021BCF9 /* IntroViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9C6226228BB0021BCF9 /* IntroViewController.swift */; };
 		65D8F9C9226229330021BCF9 /* MainTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9C8226229330021BCF9 /* MainTabBar.swift */; };
+		65D8F9CB22622AC00021BCF9 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9CA22622AC00021BCF9 /* User.swift */; };
+		65D8F9CD226236840021BCF9 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9CC226236840021BCF9 /* Helpers.swift */; };
+		65D8F9CF226237590021BCF9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9CE226237590021BCF9 /* ProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +59,9 @@
 		65D8F9C3226226CF0021BCF9 /* UserController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
 		65D8F9C6226228BB0021BCF9 /* IntroViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroViewController.swift; sourceTree = "<group>"; };
 		65D8F9C8226229330021BCF9 /* MainTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBar.swift; sourceTree = "<group>"; };
+		65D8F9CA22622AC00021BCF9 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		65D8F9CC226236840021BCF9 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		65D8F9CE226237590021BCF9 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +97,7 @@
 		6507DCC42261DEA0007B46A4 /* ocy-ios */ = {
 			isa = PBXGroup;
 			children = (
+				65D8F9D0226237700021BCF9 /* Profile */,
 				65D8F9C5226228AE0021BCF9 /* Intro */,
 				65D8F9C2226226B10021BCF9 /* Helpers */,
 				65D8F9C1226226A30021BCF9 /* Views */,
@@ -105,6 +112,8 @@
 				6507DCD42261DEA2007B46A4 /* Info.plist */,
 				6507DCCC2261DEA0007B46A4 /* ocy_ios.xcdatamodeld */,
 				65D8F9C8226229330021BCF9 /* MainTabBar.swift */,
+				65D8F9CA22622AC00021BCF9 /* User.swift */,
+				65D8F9CE226237590021BCF9 /* ProfileViewController.swift */,
 			);
 			path = "ocy-ios";
 			sourceTree = "<group>";
@@ -160,6 +169,7 @@
 				65D8F9B12261F5F60021BCF9 /* Extension+UIViewController.swift */,
 				65D8F9A92261E6A00021BCF9 /* Constants.swift */,
 				65D8F9B9226217BA0021BCF9 /* DOMParser.swift */,
+				65D8F9CC226236840021BCF9 /* Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -170,6 +180,13 @@
 				65D8F9C6226228BB0021BCF9 /* IntroViewController.swift */,
 			);
 			path = Intro;
+			sourceTree = "<group>";
+		};
+		65D8F9D0226237700021BCF9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
 			sourceTree = "<group>";
 		};
 		E0A7431D31B53983D6EED426 /* Frameworks */ = {
@@ -319,11 +336,14 @@
 				6507DCCE2261DEA0007B46A4 /* ocy_ios.xcdatamodeld in Sources */,
 				6507DCDD2261E13D007B46A4 /* RegisterInteractor.swift in Sources */,
 				6507DCC62261DEA0007B46A4 /* AppDelegate.swift in Sources */,
+				65D8F9CB22622AC00021BCF9 /* User.swift in Sources */,
 				65D8F9C4226226CF0021BCF9 /* UserController.swift in Sources */,
+				65D8F9CF226237590021BCF9 /* ProfileViewController.swift in Sources */,
 				65D8F9B4226206DD0021BCF9 /* AuthViewController.swift in Sources */,
 				65D8F9B8226207590021BCF9 /* AuthInteractor.swift in Sources */,
 				6507DCDB2261E12F007B46A4 /* RegisterViewController.swift in Sources */,
 				6507DCDF2261E146007B46A4 /* BaseInteractor.swift in Sources */,
+				65D8F9CD226236840021BCF9 /* Helpers.swift in Sources */,
 				65D8F9A82261E5A00021BCF9 /* API.swift in Sources */,
 				65D8F9AE2261F4FB0021BCF9 /* OCYButton.swift in Sources */,
 				65D8F9C9226229330021BCF9 /* MainTabBar.swift in Sources */,
