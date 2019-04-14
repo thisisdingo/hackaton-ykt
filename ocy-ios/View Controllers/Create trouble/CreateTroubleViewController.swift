@@ -28,7 +28,10 @@ class CreateTroubleViewController : UIViewController, UIPickerViewDelegate, UIPi
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var attachmentTableView: UITableView!
     @IBOutlet weak var attachmentTableViewHeightContraint: NSLayoutConstraint!
+    @IBOutlet weak var uploadButton: OCYButton!
 
+    
+    
     var mapAnnotation : MKPointAnnotation!
     var locationManager : CLLocationManager!
     
@@ -49,6 +52,7 @@ class CreateTroubleViewController : UIViewController, UIPickerViewDelegate, UIPi
         
         categoryTextField.inputView = categoryPicker
         
+        
         mapView.delegate = self
         let tapRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.revealTapOnMap(_:)))
         mapView.addGestureRecognizer(tapRecognizer)
@@ -66,7 +70,17 @@ class CreateTroubleViewController : UIViewController, UIPickerViewDelegate, UIPi
         attachmentTableView.register(UINib(nibName: "AttachmentTableViewCell", bundle: nil), forCellReuseIdentifier: "AttachmentTableViewCell")
         
         imagePicker.delegate = self
+        
+        
+        phoneTextField.text = UserController.shared.currentUser.phone
 
+    }
+    
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.categoryTextField.showAnimatedGradientSkeleton()
     }
     
     func reloadTableView(){
@@ -129,12 +143,40 @@ class CreateTroubleViewController : UIViewController, UIPickerViewDelegate, UIPi
         alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
         present(alert, animated: true, completion: nil)
     }
+    
+    @IBAction func createTrouble(_ sender : OCYButton){
+        
+        var trouble = Trouble()
+        trouble.phone = phoneTextField.text ?? ""
+        trouble.header = titleTextField.text ?? ""
+        trouble.message = textTextField.text ?? ""
+        trouble.category = selectedCategory
+        trouble.address = addressTextField.text ?? ""
+        trouble.room = apartmentTextField.text ?? ""
+        trouble.porch = entranceTextField.text ?? ""
+        trouble.latitude = String(selectedCoordinates?.latitude ?? 0.0)
+        trouble.longitude = String(selectedCoordinates?.longitude ?? 0.0)
+        
+        interactor.uploadTrouble(trouble)
+    }
+    
 }
 
 extension CreateTroubleViewController : CreateTroubleInteractorDelegate {
     func setCategories(_ categories: [Category]) {
         self.categories = categories
         categoryPicker.reloadAllComponents()
+        
+        self.categoryTextField.hideSkeleton()
+    }
+    
+    
+    func showLoading() {
+        self.uploadButton.showAnimatedGradientSkeleton()
+    }
+    
+    func hideLoading() {
+        self.uploadButton.hideSkeleton()
     }
 }
 

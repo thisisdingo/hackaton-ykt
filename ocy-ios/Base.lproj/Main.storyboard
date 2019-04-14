@@ -108,7 +108,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4q-wp-YKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-511.19999999999999" y="516.79160419790105"/>
+            <point key="canvasLocation" x="-511" y="1388"/>
         </scene>
         <!--Create Trouble View Controller-->
         <scene sceneID="WeM-HZ-ASf">
@@ -179,11 +179,18 @@
                                                     <constraint firstAttribute="height" id="FE1-e4-rm4"/>
                                                 </constraints>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cim-IO-OlV">
-                                                <rect key="frame" x="0.0" y="545" width="359" height="30"/>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cim-IO-OlV">
+                                                <rect key="frame" x="0.0" y="537.5" width="359" height="0.0"/>
                                                 <state key="normal" title="Добавить фотографию"/>
                                                 <connections>
                                                     <action selector="chooseImage:" destination="FWa-Vt-xtk" eventType="touchUpInside" id="Oda-14-RGH"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLF-yO-rVv" customClass="OCYButton" customModule="ocy_ios" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="545" width="359" height="30"/>
+                                                <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="createTrouble:" destination="FWa-Vt-xtk" eventType="touchUpInside" id="zJZ-Ac-UBJ"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -219,11 +226,12 @@
                         <outlet property="phoneTextField" destination="fJF-Xc-ZaU" id="xK2-VJ-ZC9"/>
                         <outlet property="textTextField" destination="PEd-kt-A9M" id="hii-IP-hYH"/>
                         <outlet property="titleTextField" destination="qme-fv-EPg" id="xjp-Zu-co0"/>
+                        <outlet property="uploadButton" destination="rLF-yO-rVv" id="2O6-eC-qbc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ua4-gR-KqS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="428" y="-301.79910044977515"/>
+            <point key="canvasLocation" x="393" y="-187"/>
         </scene>
         <!--Intro View Controller-->
         <scene sceneID="6F7-A8-CpG">
@@ -251,12 +259,42 @@
                     </tabBar>
                     <connections>
                         <segue destination="LEg-sY-1AX" kind="relationship" relationship="viewControllers" id="YHR-oT-vtw"/>
+                        <segue destination="hqt-fU-386" kind="relationship" relationship="viewControllers" id="jPb-aF-Fmf"/>
                         <segue destination="jMJ-IY-2Ko" kind="relationship" relationship="viewControllers" id="vYW-zY-GwY"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WxA-GO-pOz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1461" y="29"/>
+            <point key="canvasLocation" x="-1758" y="508"/>
+        </scene>
+        <!--My Troubles View Controller-->
+        <scene sceneID="aid-3H-m5i">
+            <objects>
+                <tableViewController storyboardIdentifier="MyTroublesViewController" id="7bq-wT-O8n" customClass="MyTroublesViewController" customModule="ocy_ios" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Rn6-sS-Uvi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="CDd-6X-Jp2">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="CDd-6X-Jp2" id="hDb-th-gnx">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="7bq-wT-O8n" id="CNw-gD-tJR"/>
+                            <outlet property="delegate" destination="7bq-wT-O8n" id="dHU-6G-Ide"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="uxf-ow-BpE"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hEJ-XN-XnX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="392.80000000000001" y="507.79610194902551"/>
         </scene>
         <!--Создать проблему-->
         <scene sceneID="Ng5-Lk-WQo">
@@ -275,7 +313,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="afz-lv-uJd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-511.19999999999999" y="-301.79910044977515"/>
+            <point key="canvasLocation" x="-546" y="-187"/>
+        </scene>
+        <!--Мои проблемы-->
+        <scene sceneID="EM1-bN-qGv">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hqt-fU-386" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Мои проблемы" id="6Zc-TJ-iqB"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fqq-fi-HhW">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="7bq-wT-O8n" kind="relationship" relationship="rootViewController" id="faw-D6-V91"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cY3-kc-JIg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-546.39999999999998" y="507.79610194902551"/>
         </scene>
     </scenes>
 </document>

@@ -23,6 +23,7 @@ enum APIRoute : String {
     case auth = "user/login"
     case profile = "user/settings/profile"
     case createTrouble = "trouble/create"
+    case myTroubles = "trouble/my"
 }
 
 class API {
@@ -197,26 +198,31 @@ class API {
         })
     }
     
-    
-    func createTrouble(_ trouble : Trouble){
-        func updateProfile(_ profile : Profile, _ avatar : UIImage?, _ c : @escaping callback){
+    func putTrouble(_ trouble : Trouble, _ c : @escaping callback){
+        var params = trouble.dictionary
+        params["_csrf-frontend"] = csrfToken
+        
+        print(params)
+        
+        Indigear.post(Constants.serverAddress + "trouble/create", headers, params, { result in
             
-            let parameters = profile.dictionary
-            
-            let timestampUnix = Date().timeIntervalSince1970.description
-            
-            Alamofire.upload( multipartFormData: { MultipartFormData in
-                for (key, value) in parameters {
-                    MultipartFormData.append(value.data(using: String.Encoding.utf8)!, withName: key)
-                }
-                if let avatar = avatar {
-                    MultipartFormData.append(Helpers.compressImage(avatar.normalize()) ?? Data(), withName: "user_image", fileName: "avatar-\(timestampUnix).jpg", mimeType: "image/jpeg")
-                }
-            }, to: Constants.serverAddress + "user_profile_update_api.php") { (result) in
-                c(JSON(), nil)
+            if let err = result.error {
+                c(JSON(), err.localizedDescription)
+                return
             }
             
-        }
+            let content = String(data: result.result ?? Data(), encoding: .utf8) ?? ""
+
+            print(content)
+            c(content, nil)
+        })
+    }
+    
+    func getMyTroubles( _ c : @escaping callback){
+        Indigear.run(Constants.serverAddress + "trouble/my", { result in
+            let content = String(data: result.result ?? Data(), encoding: .utf8) ?? ""
+            c(content, nil)
+        })
     }
     
 }
