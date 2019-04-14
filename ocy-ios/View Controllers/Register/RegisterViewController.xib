@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_0" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -21,17 +21,23 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_footer" translatesAutoresizingMaskIntoConstraints="NO" id="y2a-yp-ax5">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="696" width="414" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="beF-Vc-9XZ"/>
+                    </constraints>
                 </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg_header" translatesAutoresizingMaskIntoConstraints="NO" id="Eul-YZ-Vml">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                    <rect key="frame" x="0.0" y="0.0" width="414" height="200"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="cWI-KH-e6N"/>
+                    </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GaK-pY-yT6" customClass="OCYButton" customModule="ocy_ios" customModuleProvider="target">
-                    <rect key="frame" x="20" y="344" width="280" height="40"/>
+                    <rect key="frame" x="20" y="652.5" width="374" height="40"/>
                     <color key="backgroundColor" red="0.1529411765" green="0.68235294120000001" blue="0.37647058820000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="QUt-mu-zxV"/>
@@ -47,40 +53,40 @@
                     </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="h2E-Om-bua">
-                    <rect key="frame" x="20" y="143" width="280" height="181"/>
+                    <rect key="frame" x="20" y="451.5" width="374" height="181"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Электронная почта" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZc-Se-6qy">
-                            <rect key="frame" x="0.0" y="0.0" width="280" height="17"/>
+                            <rect key="frame" x="0.0" y="0.0" width="374" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lnh-jT-7PC" customClass="OCYTextField" customModule="ocy_ios" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="25" width="280" height="30"/>
+                            <rect key="frame" x="0.0" y="25" width="374" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H0g-tS-0bw">
-                            <rect key="frame" x="0.0" y="63" width="280" height="17"/>
+                            <rect key="frame" x="0.0" y="63" width="374" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fJw-Ws-7lb" customClass="OCYTextField" customModule="ocy_ios" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="88" width="280" height="30"/>
+                            <rect key="frame" x="0.0" y="88" width="374" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
                         </textField>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="33H-Li-iqu">
-                            <rect key="frame" x="0.0" y="126" width="280" height="17"/>
+                            <rect key="frame" x="0.0" y="126" width="374" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="16O-gj-LsN" customClass="OCYTextField" customModule="ocy_ios" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="151" width="280" height="30"/>
+                            <rect key="frame" x="0.0" y="151" width="374" height="30"/>
                             <nil key="textColor"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits"/>
@@ -88,16 +94,16 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="tru-nY-0Aq">
-                    <rect key="frame" x="16" y="504" width="288" height="56"/>
+                    <rect key="frame" x="16" y="812.5" width="382" height="41.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Нажимая на кнопку &quot;Зарегистрироваться&quot; вы принимаете" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBb-NG-LO3">
-                            <rect key="frame" x="0.0" y="0.0" width="288" height="29"/>
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="14.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lkx-Yr-ZRy">
-                            <rect key="frame" x="0.0" y="29" width="288" height="27"/>
+                            <rect key="frame" x="0.0" y="14.5" width="382" height="27"/>
                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <state key="normal" title="Условия пользования и политику конфидениальности">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -117,22 +123,20 @@
                 <constraint firstItem="h2E-Om-bua" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="S44-6i-F11"/>
                 <constraint firstItem="GaK-pY-yT6" firstAttribute="width" secondItem="h2E-Om-bua" secondAttribute="width" id="UZ9-Z2-q1f"/>
                 <constraint firstItem="h2E-Om-bua" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="VJU-22-jSK"/>
-                <constraint firstAttribute="bottom" secondItem="Eul-YZ-Vml" secondAttribute="bottom" id="VRN-04-vZl"/>
                 <constraint firstAttribute="trailing" secondItem="Eul-YZ-Vml" secondAttribute="trailing" id="Z4S-2i-F4i"/>
                 <constraint firstItem="y2a-yp-ax5" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="dUA-3m-gDs"/>
                 <constraint firstItem="GaK-pY-yT6" firstAttribute="centerX" secondItem="h2E-Om-bua" secondAttribute="centerX" id="fZc-L7-Wem"/>
                 <constraint firstItem="Eul-YZ-Vml" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="hYV-TU-o7U"/>
-                <constraint firstItem="y2a-yp-ax5" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="j8Q-Jy-Cem"/>
                 <constraint firstItem="tru-nY-0Aq" firstAttribute="top" secondItem="GaK-pY-yT6" secondAttribute="bottom" constant="120" id="rBe-hb-TFA"/>
                 <constraint firstItem="y2a-yp-ax5" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="u5X-Aj-b7i"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="tru-nY-0Aq" secondAttribute="bottom" constant="8" id="weY-34-yBj"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <point key="canvasLocation" x="63.200000000000003" y="104.7976011994003"/>
+            <point key="canvasLocation" x="61.875" y="104.5774647887324"/>
         </view>
     </objects>
     <resources>
-        <image name="bg_footer" width="259.44000244140625" height="461"/>
-        <image name="bg_header" width="259.44000244140625" height="461"/>
+        <image name="bg_footer" width="375.1199951171875" height="260.16000366210938"/>
+        <image name="bg_header" width="375.1199951171875" height="260.16000366210938"/>
     </resources>
 </document>

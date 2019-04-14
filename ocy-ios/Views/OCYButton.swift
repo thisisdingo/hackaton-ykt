@@ -30,10 +30,15 @@ import UIKit
     
     func setupView() {
         self.isSkeletonable = true
+        self.backgroundColor = #colorLiteral(red: 0.231372549, green: 0.4823529412, blue: 0.831372549, alpha: 1)
     }
     
     override func didMoveToWindow() {
         setupView()
     }
+    
+    
+    
+    
     
 }

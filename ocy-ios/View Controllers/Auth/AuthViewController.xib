@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bg" translatesAutoresizingMaskIntoConstraints="NO" id="D8I-WV-dSy">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="567"/>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LzT-5d-wEA" customClass="OCYButton" customModule="ocy_ios" customModuleProvider="target">
                     <rect key="frame" x="20" y="467" width="335" height="40"/>
@@ -54,7 +54,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Логин" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZy-bx-LMS">
                             <rect key="frame" x="0.0" y="0.0" width="335" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="L1e-Un-Nrn" customClass="OCYTextField" customModule="ocy_ios" customModuleProvider="target">
@@ -66,7 +66,7 @@
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Пароль" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXF-JQ-f3t">
                             <rect key="frame" x="0.0" y="63" width="335" height="17"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="CqC-0f-dVT" customClass="OCYTextField" customModule="ocy_ios" customModuleProvider="target">
@@ -98,7 +98,6 @@
                 <constraint firstItem="D8I-WV-dSy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="3oC-NH-tte"/>
                 <constraint firstItem="zKk-cT-McG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="EFX-yY-b5b"/>
                 <constraint firstItem="5Dt-oM-DLy" firstAttribute="centerX" secondItem="LzT-5d-wEA" secondAttribute="centerX" id="IpJ-Wj-D8e"/>
-                <constraint firstAttribute="bottom" secondItem="D8I-WV-dSy" secondAttribute="bottom" id="Jjh-ne-DKR"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="zKk-cT-McG" secondAttribute="trailing" constant="20" id="SBb-vH-5lL"/>
                 <constraint firstItem="LzT-5d-wEA" firstAttribute="centerX" secondItem="zKk-cT-McG" secondAttribute="centerX" id="STi-1U-Yxe"/>
                 <constraint firstItem="rnb-HL-Kkl" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="8" id="Vyu-bb-hup"/>
@@ -107,6 +106,7 @@
                 <constraint firstItem="zKk-cT-McG" firstAttribute="centerX" secondItem="vUN-kp-3ea" secondAttribute="centerX" id="dS9-al-7P1"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="rnb-HL-Kkl" secondAttribute="trailing" constant="8" id="dkF-B5-Q6S"/>
                 <constraint firstItem="D8I-WV-dSy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="esb-9t-O69"/>
+                <constraint firstItem="D8I-WV-dSy" firstAttribute="bottom" secondItem="5Dt-oM-DLy" secondAttribute="bottom" id="pAF-AT-cJz"/>
                 <constraint firstItem="LzT-5d-wEA" firstAttribute="top" secondItem="zKk-cT-McG" secondAttribute="bottom" constant="20" id="pqk-Gj-EJx"/>
                 <constraint firstItem="rnb-HL-Kkl" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="8" id="rvh-o7-VJN"/>
                 <constraint firstItem="LzT-5d-wEA" firstAttribute="width" secondItem="zKk-cT-McG" secondAttribute="width" id="tMb-8g-J4n"/>
@@ -118,6 +118,6 @@
         </view>
     </objects>
     <resources>
-        <image name="bg" width="259.44000244140625" height="461"/>
+        <image name="bg" width="375.1199951171875" height="547.20001220703125"/>
     </resources>
 </document>
