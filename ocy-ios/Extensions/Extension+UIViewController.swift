@@ -11,9 +11,9 @@ import UIKit
 extension UIViewController {
     
     
-    func alert(_ text : String){
-        let alert = UIAlertController(title: text, message: nil, preferredStyle: .alert)
+    func alert(_ text : String, _ message : String? = nil){
+        let alert = UIAlertController(title: text, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Закрыть", style: .cancel, handler: nil))
-        self.present(alert, animated: true, completion: nil)        
+        self.present(alert, animated: true, completion: nil)
     }
 }

@@ -222,6 +222,7 @@ extension CreateTroubleViewController : CreateTroubleInteractorDelegate {
         apartmentTextField.text = nil
         entranceTextField.text = nil
         selectedCoordinates = nil
+        categoryTextField.text = nil
         
         alert("Ваше сообщение зарегистрировано в системе")
         

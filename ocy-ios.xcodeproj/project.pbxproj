@@ -46,6 +46,7 @@
 		65D8F9F12262C4880021BCF9 /* MyTroubleTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65D8F9EF2262C4880021BCF9 /* MyTroubleTableViewCell.xib */; };
 		65D8F9F42262D49C0021BCF9 /* ChooseOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9F32262D49C0021BCF9 /* ChooseOrderViewController.swift */; };
 		65D8F9F62262D4CC0021BCF9 /* ChooseOrderInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9F52262D4CC0021BCF9 /* ChooseOrderInteractor.swift */; };
+		65D8F9F92262FDEE0021BCF9 /* ClassificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D8F9F82262FDEE0021BCF9 /* ClassificationService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		65D8F9EF2262C4880021BCF9 /* MyTroubleTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyTroubleTableViewCell.xib; sourceTree = "<group>"; };
 		65D8F9F32262D49C0021BCF9 /* ChooseOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseOrderViewController.swift; sourceTree = "<group>"; };
 		65D8F9F52262D4CC0021BCF9 /* ChooseOrderInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseOrderInteractor.swift; sourceTree = "<group>"; };
+		65D8F9F82262FDEE0021BCF9 /* ClassificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClassificationService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 				65D8F9A92261E6A00021BCF9 /* Constants.swift */,
 				65D8F9B9226217BA0021BCF9 /* DOMParser.swift */,
 				65D8F9CC226236840021BCF9 /* Helpers.swift */,
+				65D8F9F82262FDEE0021BCF9 /* ClassificationService.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -466,6 +469,7 @@
 				65D8F9F62262D4CC0021BCF9 /* ChooseOrderInteractor.swift in Sources */,
 				65D8F9D2226237B50021BCF9 /* ProfileInteractor.swift in Sources */,
 				6507DCDB2261E12F007B46A4 /* RegisterViewController.swift in Sources */,
+				65D8F9F92262FDEE0021BCF9 /* ClassificationService.swift in Sources */,
 				6507DCDF2261E146007B46A4 /* BaseInteractor.swift in Sources */,
 				65D8F9F02262C4880021BCF9 /* MyTroubleTableViewCell.swift in Sources */,
 				65D8F9CD226236840021BCF9 /* Helpers.swift in Sources */,

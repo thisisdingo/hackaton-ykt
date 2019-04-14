@@ -11,5 +11,7 @@ target 'ocy-ios' do
   pod 'SwiftSoup'
   pod 'SkeletonView'
   pod 'AutoKeyboard', '~> 1.4.3'
-  
+#  pod 'VisionLab'  
+#  pod 'VisionLab', git: 'https://github.com/cocoa-ai/VisionLab'
+
 end

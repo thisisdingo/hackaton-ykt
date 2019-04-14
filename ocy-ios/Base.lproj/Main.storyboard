@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Profile View Controller-->
+        <!--Аккаунт-->
         <scene sceneID="ERH-HI-0Zx">
             <objects>
                 <viewController storyboardIdentifier="ProfileViewController" id="jMJ-IY-2Ko" customClass="ProfileViewController" customModule="ocy_ios" customModuleProvider="target" sceneMemberID="viewController">
@@ -112,7 +112,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NYG-zn-Btc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="icon4" selectedImage="icon4b" id="H5s-Uy-7KC"/>
+                    <tabBarItem key="tabBarItem" title="Аккаунт" image="icon4" selectedImage="icon4b" id="H5s-Uy-7KC"/>
                     <connections>
                         <outlet property="emailTextField" destination="WwU-bm-m2O" id="Yxo-1a-PtF"/>
                         <outlet property="houseTextField" destination="yH7-YI-5Rz" id="aFZ-an-pZh"/>
@@ -346,11 +346,11 @@
             </objects>
             <point key="canvasLocation" x="392.75362318840581" y="507.58928571428567"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Новое обращение-->
         <scene sceneID="Ng5-Lk-WQo">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="LEg-sY-1AX" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icon2" selectedImage="icon2b" id="Txc-Uu-scv"/>
+                    <tabBarItem key="tabBarItem" title="Новое обращение" image="icon2" selectedImage="icon2b" id="Txc-Uu-scv"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yYy-Ob-8xd">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -365,11 +365,11 @@
             </objects>
             <point key="canvasLocation" x="-546" y="-187"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Мои обращения-->
         <scene sceneID="EM1-bN-qGv">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hqt-fU-386" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="icon1" selectedImage="icon1b" id="6Zc-TJ-iqB"/>
+                    <tabBarItem key="tabBarItem" title="Мои обращения" image="icon1" selectedImage="icon1b" id="6Zc-TJ-iqB"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="fqq-fi-HhW">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
