@@ -11,6 +11,7 @@ import SwiftSoup
 
 protocol CreateTroubleInteractorDelegate : BaseInteractorDelegate {
     func setCategories(_ categories : [Category])
+    func didGetAddress(_ address : String )
 }
 
 class CreateTroubleInteractor : BaseInteractor {
@@ -64,6 +65,13 @@ class CreateTroubleInteractor : BaseInteractor {
             self.delegate?.success?()
         })
         
+    }
+    
+    
+    func fetchAddressBy(_ latitude : String, _ longitude : String) {
+        api.getAddress(latitude, longitude, { res, err in
+            (self.delegate as! CreateTroubleInteractorDelegate).didGetAddress(res as! String)
+        })
     }
     
 }

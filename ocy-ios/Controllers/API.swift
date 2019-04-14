@@ -233,4 +233,16 @@ class API {
         })
     }
     
+    func getAddress(_ lat : String, _ lng : String, _ c : @escaping callback){
+        Indigear.run(Constants.osm_url + "lat=\(lat)&lon=\(lng)", { result in
+            let json = JSON(result.result ?? Data())
+            
+            let address = json["address"]["road"].stringValue + ", " + json["address"]["house_number"].stringValue
+            
+            c(address, nil)
+        })
+    }
+    
+    
+    
 }

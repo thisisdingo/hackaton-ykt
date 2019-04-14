@@ -119,6 +119,8 @@ class CreateTroubleViewController : UIViewController, UIPickerViewDelegate, UIPi
             mapView.removeAnnotation(annoation)
         }
         setCoordinate()
+        
+        interactor.fetchAddressBy(String(locationCoordinate.latitude), String(locationCoordinate.longitude))
     }
     
     func setCoordinate(){
@@ -163,6 +165,10 @@ class CreateTroubleViewController : UIViewController, UIPickerViewDelegate, UIPi
 }
 
 extension CreateTroubleViewController : CreateTroubleInteractorDelegate {
+    func didGetAddress(_ address: String) {
+        addressTextField.text = address
+    }
+    
     func setCategories(_ categories: [Category]) {
         self.categories = categories
         categoryPicker.reloadAllComponents()
