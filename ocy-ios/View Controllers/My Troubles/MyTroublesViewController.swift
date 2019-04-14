@@ -13,7 +13,7 @@ class MyTroublesViewController : UITableViewController {
     
     var interactor : MyTroublesInteractor!
     
-    var myTroubles = [Trouble]()
+    var myTroubles : [Trouble]?
     
     
     override func viewDidLoad() {
@@ -27,41 +27,39 @@ class MyTroublesViewController : UITableViewController {
     
 }
 
-extension MyTroublesViewController : SkeletonTableViewDataSource {
-    
-    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
-        return "MyTroubleTableViewCell"
-    }
-    
+extension MyTroublesViewController {
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyTroubleTableViewCell") as! MyTroubleTableViewCell
         
-        let trouble = myTroubles[indexPath.row]
         
-        cell.troubleHeader.text = trouble.header
-        cell.troubleMessage.text = trouble.message
-        cell.troubleCategory.text = trouble.category?.title ?? ""
-        
+        if myTroubles != nil {
+            let trouble = myTroubles![indexPath.row]
+            cell.troubleHeader.text = trouble.header
+            cell.troubleMessage.text = trouble.message
+            cell.troubleCategory.text = trouble.category?.title ?? ""
+            
+            cell.hideSkeleton()
+        }
+
         return cell
     }
     
-    func collectionSkeletonView(_ skeletonView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 20
-    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return myTroubles.count
+        return myTroubles?.count ?? 20
     }
+    
 }
 
 extension MyTroublesViewController : MyTroublesInteractorDelegate {
     
     func showLoading() {
-        self.view.startSkeletonAnimation()
+        //self.view.startSkeletonAnimation()
     }
     
     func hideLoading() {
-        self.view.hideSkeleton()
+        //self.view.hideSkeleton()
     }
     
     func didFetchTroubles(_ trouble: [Trouble]) {

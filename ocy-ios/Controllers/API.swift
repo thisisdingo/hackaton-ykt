@@ -24,6 +24,7 @@ enum APIRoute : String {
     case profile = "user/settings/profile"
     case createTrouble = "trouble/create"
     case myTroubles = "trouble/my"
+    case chooseTrouble = "trouble/view"
 }
 
 class API {
@@ -220,6 +221,13 @@ class API {
     
     func getMyTroubles( _ c : @escaping callback){
         Indigear.run(Constants.serverAddress + "trouble/my", { result in
+            let content = String(data: result.result ?? Data(), encoding: .utf8) ?? ""
+            c(content, nil)
+        })
+    }
+    
+    func getTrouble( _ troubleId : String, _ c : @escaping callback){
+        Indigear.run(Constants.serverAddress + "trouble/view?id=\(troubleId)", { result in
             let content = String(data: result.result ?? Data(), encoding: .utf8) ?? ""
             c(content, nil)
         })

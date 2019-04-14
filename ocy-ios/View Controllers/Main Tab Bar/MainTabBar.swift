@@ -22,7 +22,7 @@ class MainTabBar : UITabBarController {
     }
     
     @objc func setUserData(){
-        tabBar.items?.last?.title = UserController.shared.currentUser.name
+        //tabBar.items?.last?.title = UserController.shared.currentUser.name
     }
     
 }

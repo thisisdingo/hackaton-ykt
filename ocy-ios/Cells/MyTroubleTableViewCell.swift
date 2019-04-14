@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class MyTroubleTableViewCell: UITableViewCell {
 
@@ -16,7 +17,18 @@ class MyTroubleTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+
+        [troubleHeader, troubleMessage, troubleCategory].forEach {
+            $0?.isSkeletonable = true
+            $0?.showAnimatedGradientSkeleton()
+        }
+        
+    }
+    
+    func hideSkeleton(){
+        [troubleHeader, troubleMessage, troubleCategory].forEach {
+            $0?.hideSkeleton()
+        }
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
