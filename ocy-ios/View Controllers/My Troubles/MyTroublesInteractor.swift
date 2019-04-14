@@ -41,7 +41,6 @@ class MyTroublesInteractor : BaseInteractor {
                     print(error.localizedDescription)
                 }
                 self.delegate?.hideLoading?()
-                //(self.delegate as! MyTroublesInteractorDelegate).didFetchTroubles(<#T##trouble: [Trouble]##[Trouble]#>)
             }
         })
     }

@@ -40,7 +40,6 @@ class AuthViewController : UIViewController {
     
     @IBAction func didAuthButtonTapped(_ sender : OCYButton){
         interactor.auth(loginTextField.text!, passwordTextField.text!)
-        
     }
     
     @IBAction func didRegisterTapped(_ sender : OCYButton){

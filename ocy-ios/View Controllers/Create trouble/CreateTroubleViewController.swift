@@ -148,6 +148,14 @@ class CreateTroubleViewController : UIViewController, UIPickerViewDelegate, UIPi
     
     @IBAction func createTrouble(_ sender : OCYButton){
         
+        
+        let invalidField = notCorrectFields()
+        
+        if !invalidField.isEmpty {
+            alert("Заполните следующие поля", invalidField.joined(separator: ","))
+            return
+        }
+        
         var trouble = Trouble()
         trouble.phone = phoneTextField.text ?? ""
         trouble.header = titleTextField.text ?? ""
@@ -162,9 +170,63 @@ class CreateTroubleViewController : UIViewController, UIPickerViewDelegate, UIPi
         interactor.uploadTrouble(trouble)
     }
     
+    
+    func notCorrectFields() -> [String] {
+        var invalidFields = [String]()
+        
+        if selectedCategory == nil {
+            invalidFields.append("Категория")
+        }
+        
+        if phoneTextField.text?.isEmpty ?? true {
+            invalidFields.append("Номер телефона")
+        }
+        
+        if titleTextField.text?.isEmpty ?? true {
+            invalidFields.append("Заглавие")
+        }
+        
+        if textTextField.text?.isEmpty ?? true {
+            invalidFields.append("Текст")
+        }
+        
+        if addressTextField.text?.isEmpty ?? true {
+            invalidFields.append("Адрес")
+        }
+        
+        if apartmentTextField.text?.isEmpty ?? true {
+            invalidFields.append("Квартира")
+        }
+        
+        if entranceTextField.text?.isEmpty ?? true {
+            invalidFields.append("Подъезд")
+        }
+        
+        if selectedCoordinates == nil {
+            invalidFields.append("Координаты")
+        }
+        
+        return invalidFields
+    }
+    
 }
 
 extension CreateTroubleViewController : CreateTroubleInteractorDelegate {
+    
+    func success() {
+        phoneTextField.text = nil
+        titleTextField.text = nil
+        textTextField.text = nil
+        selectedCategory = nil
+        addressTextField.text = nil
+        apartmentTextField.text = nil
+        entranceTextField.text = nil
+        selectedCoordinates = nil
+        
+        alert("Ваше сообщение зарегистрировано в системе")
+        
+    }
+    
     func didGetAddress(_ address: String) {
         addressTextField.text = address
     }
