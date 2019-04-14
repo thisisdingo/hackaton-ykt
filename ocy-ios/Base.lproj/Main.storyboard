@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="44" width="414" height="769"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Bb5-Mn-GaB">
-                                        <rect key="frame" x="8" y="8" width="398" height="352"/>
+                                        <rect key="frame" x="8" y="90" width="398" height="372"/>
                                         <subviews>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Фамилия" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RIY-a5-FvH" customClass="OCYTextField" customModule="ocy_ios" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="0.0" width="398" height="30"/>
@@ -61,14 +61,22 @@
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciq-CF-aNW" customClass="OCYButton" customModule="ocy_ios" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="276" width="398" height="30"/>
-                                                <state key="normal" title="Спаси и сахрани"/>
+                                                <rect key="frame" x="0.0" y="276" width="398" height="50"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="50" id="tJO-0V-pwH"/>
+                                                </constraints>
+                                                <state key="normal" title="Сохранить">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isCornerRadius" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
                                                 <connections>
                                                     <action selector="didSaveButtonTapped:" destination="jMJ-IY-2Ko" eventType="touchUpInside" id="qt7-kj-kLx"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Nu-N5-52x">
-                                                <rect key="frame" x="0.0" y="322" width="398" height="30"/>
+                                                <rect key="frame" x="0.0" y="342" width="398" height="30"/>
                                                 <state key="normal" title="Выйти с аккаунта"/>
                                                 <connections>
                                                     <action selector="didLogoutBtnTapped:" destination="jMJ-IY-2Ko" eventType="touchUpInside" id="WC8-ch-Npd"/>
@@ -76,12 +84,21 @@
                                             </button>
                                         </subviews>
                                     </stackView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="main_header" translatesAutoresizingMaskIntoConstraints="NO" id="0V9-Qd-DKz">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="NRC-jG-f9g"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Bb5-Mn-GaB" firstAttribute="leading" secondItem="W4z-WZ-ARH" secondAttribute="leading" constant="8" id="0Nx-KC-zKD"/>
                                     <constraint firstAttribute="trailing" secondItem="Bb5-Mn-GaB" secondAttribute="trailing" constant="8" id="7Vh-HD-467"/>
-                                    <constraint firstItem="Bb5-Mn-GaB" firstAttribute="top" secondItem="W4z-WZ-ARH" secondAttribute="top" constant="8" id="GXi-hJ-Bfj"/>
+                                    <constraint firstAttribute="trailing" secondItem="0V9-Qd-DKz" secondAttribute="trailing" id="LGZ-0Q-rpU"/>
+                                    <constraint firstItem="0V9-Qd-DKz" firstAttribute="top" secondItem="W4z-WZ-ARH" secondAttribute="top" id="Qsf-dX-Wqv"/>
+                                    <constraint firstItem="Bb5-Mn-GaB" firstAttribute="top" secondItem="0V9-Qd-DKz" secondAttribute="bottom" constant="20" id="Uoc-w8-BIu"/>
                                     <constraint firstItem="Bb5-Mn-GaB" firstAttribute="centerX" secondItem="W4z-WZ-ARH" secondAttribute="centerX" id="bGp-ZE-RhK"/>
+                                    <constraint firstItem="0V9-Qd-DKz" firstAttribute="leading" secondItem="W4z-WZ-ARH" secondAttribute="leading" id="fKa-e7-Elq"/>
                                     <constraint firstAttribute="bottom" secondItem="Bb5-Mn-GaB" secondAttribute="bottom" constant="8" id="qBd-1F-4EX"/>
                                 </constraints>
                             </scrollView>
@@ -108,7 +125,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z4q-wp-YKz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-511" y="1388"/>
+            <point key="canvasLocation" x="-511.59420289855075" y="1387.5"/>
         </scene>
         <!--Create Trouble View Controller-->
         <scene sceneID="WeM-HZ-ASf">
@@ -206,7 +223,7 @@
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Q89-Tf-4ai" firstAttribute="leading" secondItem="9bQ-O0-MU1" secondAttribute="leading" constant="8" id="Dd1-uG-TVM"/>
-                                    <constraint firstAttribute="bottom" secondItem="Q89-Tf-4ai" secondAttribute="bottom" constant="8" id="Gus-LM-2Y1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Q89-Tf-4ai" secondAttribute="bottom" constant="120" id="Gus-LM-2Y1"/>
                                     <constraint firstItem="lSc-gw-nGM" firstAttribute="top" secondItem="9bQ-O0-MU1" secondAttribute="top" id="I7f-8Z-MqY"/>
                                     <constraint firstItem="Q89-Tf-4ai" firstAttribute="centerX" secondItem="9bQ-O0-MU1" secondAttribute="centerX" id="JDt-uZ-Nve"/>
                                     <constraint firstAttribute="trailing" secondItem="Q89-Tf-4ai" secondAttribute="trailing" constant="8" id="JIU-Y0-LWt"/>

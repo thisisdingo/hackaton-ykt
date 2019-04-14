@@ -80,8 +80,8 @@ class CreateTroubleViewController : UIViewController, UIPickerViewDelegate, UIPi
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.categoryTextField.showAnimatedGradientSkeleton()
     }
+
     
     func reloadTableView(){
         attachmentTableView.reloadData()
@@ -173,7 +173,6 @@ extension CreateTroubleViewController : CreateTroubleInteractorDelegate {
         self.categories = categories
         categoryPicker.reloadAllComponents()
         
-        self.categoryTextField.hideSkeleton()
     }
     
     
